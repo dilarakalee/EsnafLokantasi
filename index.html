@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramazan Esnaf Lokantası Simülatörü</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background / Window Area -->
+    <div id="game-world" class="iftar-mode">
+        <div class="window-view">
+            <div class="sky"></div>
+            <div class="stars"></div>
+            <div class="sun"></div>
+            <div class="moon"></div>
+            <div class="city-skyline"></div>
+            <div class="city-windows"></div>
+            <!-- Cannon Effect -->
+            <div id="cannon-effect" class="cannon-effect">
+                <div class="cannon-base"></div>
+                <div class="cannon-barrel"></div>
+                <div class="flash"></div>
+                <div class="smoke"></div>
+            </div>
+        </div>
+        
+        <!-- Decorations -->
+        <div class="decorations">
+            <div class="lantern lantern-left">
+                <div class="lantern-light"></div>
+            </div>
+            <div class="mahya">
+                <span>Hoş Geldin Ya Şehr-i Ramazan</span>
+            </div>
+            <div class="lantern lantern-right">
+                <div class="lantern-light"></div>
+            </div>
+        </div>
+
+        <!-- Changing UI Layer (HUD) -->
+        <div class="hud">
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="label">Para</span>
+                    <span id="money-display" class="value">0 ₺</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Puan</span>
+                    <span id="score-display" class="value">0</span>
+                </div>
+            </div>
+            <button id="mode-toggle-btn" class="btn-premium">Sahur Moduna Geç</button>
+        </div>
+
+        <!-- Customer Interaction Area -->
+        <div class="customer-area">
+            <div id="customer" class="hidden">
+                <div class="speech-bubble">
+                    <p id="customer-dialogue">Selamın aleyküm ustam, kolay gelsin!</p>
+                </div>
+                <div class="customer-body"></div>
+            </div>
+        </div>
+
+        <!-- Counter Area -->
+        <div class="counter">
+            <div class="counter-top"></div>
+            
+            <div class="kitchen-layout">
+                <!-- Prep Zone (Left) -->
+                <div class="prep-zone">
+                    <div class="cutting-board" id="cutting-board">
+                        <div class="knife" id="knife"></div>
+                        <!-- Ingredients to chop appear here -->
+                    </div>
+                    <div class="raw-ingredients" id="raw-ingredients-container">
+                        <!-- Raw items spawn here -->
+                    </div>
+                </div>
+
+                <!-- Assembly Zone (Center) -->
+                <div class="assembly-zone">
+                    <div id="plate" class="plate">
+                        <!-- Prepared items appear here -->
+                    </div>
+                    <button id="serve-btn" class="btn-serve" disabled>Servis Et</button>
+                </div>
+
+                <!-- Cooking Zone (Right) -->
+                <div class="cook-zone">
+                    <div class="stove">
+                        <div class="burner" id="burner-1">
+                            <div class="pot">
+                                <div class="food-area"></div>
+                                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                            </div>
+                        </div>
+                        <div class="burner" id="burner-2">
+                            <div class="pan">
+                                <div class="food-area"></div>
+                                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oven" id="oven">
+                        <div class="oven-window">
+                             <div class="food-area"></div>
+                        </div>
+                        <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Numbers Container -->
+        <div id="floating-texts-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
